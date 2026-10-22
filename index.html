@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global B Food Production Group | Luxury Dining & Catering</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-deep: #0a0a0a;
+            --bg-card: #141414;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --text-main: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --border-color: rgba(212, 175, 55, 0.2);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .cta-btn-nav {
+            border: 1px solid var(--gold-primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            color: var(--gold-light) !important;
+            transition: var(--transition);
+        }
+
+        .cta-btn-nav:hover {
+            background: var(--gold-primary);
+            color: var(--bg-deep) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.8)), 
+                        url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size:.5rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--bg-deep);
+            padding: 0.9rem 2.2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Section Generic */
+        section {
+            padding: 7rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header span {
+            color: var(--gold-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        /* About / Group Overview */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            filter: brightness(0.9);
+        }
+
+        /* Brands / Flagship Restaurants */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .brand-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .brand-img {
+            height: 260px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .brand-info {
+            padding: 2rem;
+        }
+
+        .brand-info h3 {
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .brand-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .brand-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold-primary);
+            border-bottom: 1px solid var(--gold-primary);
+            padding-bottom: 2px;
+        }
+
+        /* Catering & Events Section */
+        .catering-section {
+            background: linear-gradient(to bottom, var(--bg-deep), var(--bg-card));
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            max-width: 100%;
+            padding: 7rem 1rem;
+        }
+
+        .catering-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .catering-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .catering-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .catering-features i {
+            color: var(--gold-primary);
+            margin-top: 4px;
+        }
+
+        /* Contact & Footer */
+        footer {
+            background: var(--bg-deep);
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h4 {
+            color: var(--gold-light);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--gold-primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            color: var(--gold-light);
+        }
+
+        .social-icons a:hover {
+            background: var(--gold-primary);
+            color: var(--bg-deep);
+            border-color: var(--gold-primary);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can add mobile toggle later */
+            }
+            .about-grid, .catering-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">GLOBAL B</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#brands">Flagship Brands</a></li>
+                <li><a href="#catering">Catering & Events</a></li>
+                <li><a href="#contact" class="cta-btn-nav">Inquire Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Global B Food Production Group</h1>
+            <p>Redefining Culinary Excellence through Artisanal Craftsmanship, Premium Dining, and Exclusive Catering Experiences.</p>
+            <a href="#brands" class="btn-gold">Explore Our Brands</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <span style="color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; font-weight: 600;">Our Philosophy</span>
+                <h2 style="font-size: 2.3rem; margin: 1rem 0 1.5rem; color: var(--text-main);">A Legacy of Taste & Quality</h2>
+                <p>Global B Food Production Group stands at the forefront of modern gastronomy. We curate exceptional dining concepts that blend traditional culinary mastery with contemporary elegance.</p>
+                <p>From upscale restaurant management to bespoke banquet and corporate catering, every dish we serve reflects our unyielding commitment to premium ingredients, exquisite presentation, and memorable hospitality.</p>
+                <a href="#catering" class="btn-gold" style="margin-top: 1rem; padding: 0.7rem 1.5rem; font-size: 0.85rem;">Book Private Catering</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Global B Dining Experience">
+            </div>
+        </div>
+    </section>
+
+    <!-- Flagship Brands Section -->
+    <section id="brands" style="background: rgba(20,20,20,0.5);">
+        <div class="section-header">
+            <span>Portfolio</span>
+            <h2>Our Flagship Destinations</h2>
+        </div>
+        <div class="brands-grid">
+            <!-- Brand 1: Monaco Dining -->
+            <div class="brand-card">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Monaco Dining" class="brand-img">
+                <div class="brand-info">
+                    <h3>Monaco Dining</h3>
+                    <p>An exquisite fine dining establishment offering sophisticated international menus, romantic ambiance, and world-class wine pairings.</p>
+                    <span class="brand-tag">Fine Dining & Bar</span>
+                </div>
+            </div>
+            <!-- Brand 2: Rakuken -->
+            <div class="brand-card">
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80" alt="Rakuken" class="brand-img">
+                <div class="brand-info">
+                    <h3>Rakuken</h3>
+                    <p>Immerse your senses in authentic Japanese culinary artistry, featuring master-crafted robatayaki, fresh sashimi, and premium grilled skewers.</p>
+                    <span class="brand-tag">Japanese Gastronomy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering & Banquet Section -->
+    <div class="catering-section" id="catering">
+        <div class="catering-container">
+            <div>
+                <span style="color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; font-weight: 600;">Exclusive Services</span>
+                <h2 style="font-size: 2.3rem; margin: 1rem 0 1.5rem;">Banquet & Private Catering</h2>
+                <p style="color: var(--text-muted); font-weight: 300;">Elevate your corporate functions, private celebrations, and grand wedding banquets with Global B’s bespoke catering solutions. We bring restaurant-grade luxury directly to your venue.</p>
+                <ul class="catering-features">
+                    <li><i class="fa-solid fa-check"></i> Customized Menu Design Tailored to Your Theme</li>
+                    <li><i class="fa-solid fa-check"></i> Professional Silver-Service & Event Coordination</li>
+                    <li><i class="fa-solid fa-check"></i> Premium Sourcing of Seasonal Global Ingredients</li>
+                </ul>
+            </div>
+            <div style="background: var(--bg-card); padding: 3rem; border: 1px solid var(--border-color); border-radius: 6px;">
+                <h3 style="color: var(--gold-light); margin-bottom: 1rem; font-size: 1.5rem;">Plan Your Event</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; font-weight: 300;">Speak with our event consultants to curate an unforgettable dining experience.</p>
+                <a href="mailto:info@globalbgroupcatering.com" class="btn-gold" style="text-align: center; display: block;">Contact Event Team</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Global B Group</h4>
+                <p>Excellence in food production, restaurant operations, and premium catering services.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Flagship Concepts</h4>
+                <p>Monaco Dining</p>
+                <p>Rakuken Japanese Grill</p>
+                <p>Global B Banquets</p>
+            </div>
+            <div class="footer-col">
+                <h4>Inquiries & Support</h4>
+                <p>Email: info@globalbgroupcatering.com</p>
+                <p>Available for corporate partnerships and private bookings.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global B Food Production Group. All Rights Reserved. Powered by GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
